@@ -1,0 +1,13 @@
+﻿@using Helper.Extensions
+
+<link href="~/css/main.css" rel="stylesheet" />
+<br />
+<div class="row" style="margin:10px">
+    <div class="col-md-6">
+        @Html.AsyncPartial("home", "getdata")
+        </div>
+    <div class="col-md-6">
+        -
+    </div>
+    </div> 
+        <script>@Html.Raw(TempData["script"])</script>

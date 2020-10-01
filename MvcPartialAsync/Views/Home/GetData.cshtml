@@ -1,0 +1,31 @@
+﻿@model MvcPartialAsync.Models.PopulationModel
+<div class="panel panel-primary" style="width:100%">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-sm-11"><h3 class="panel-title">World Population</h3></div>
+            <div class="col-sm-1">
+                <a DATA-partial-refresh href="#"><span style="color:white" class="glyphicon glyphicon-refresh"></span></a>
+            </div>
+        </div>
+        
+      
+    </div>
+    <div class="panel-body">
+        <table style="width:100%" class="table table-striped">
+            <thead>
+            <th>Region</th>
+            <th style="text-align:right">Population</th>
+            <th style="text-align:right">Area Km²</th>
+            </thead>
+            @foreach (var item in Model.regions)
+            {
+                <tr>
+                    <td>@item.RegionName</td>
+                    <td style="text-align :right">@item.Population.ToString("N").Split(',')[0]</td>
+                <td style="text-align :right">@item.Area.ToString("N").Split(',')[0]</td>
+
+            </tr>
+            }
+        </table>
+    </div>
+</div>
